@@ -1,0 +1,28 @@
+---
+import SocialProp from "@/assets/SocialProp.astro";
+import { PersonalSocialLinks, type SocialInfo } from "@/lib/data";
+---
+
+<footer class="w-full bg-gradient-to-b from-black/60 to-transparent py-20">
+  <div class="max-w-[800px] grid grid-cols-2 gap-3 mx-auto">
+    <nav aria-role="social-nav">
+      <h3 class="semi-bold text-cyan-400/90">Redes Sociales</h3>
+      <ul>
+        {
+          PersonalSocialLinks.map((item: SocialInfo) => {
+            return (
+              <a
+                href={item.SocialLink}
+                class="text-white flex gap-2 items-center hover:text-cyan-400 transition"
+              >
+                <SocialProp icon={item.SocialNetwork} />
+                <span>{item.UserName}</span>
+              </a>
+            );
+          })
+        }
+      </ul>
+    </nav>
+    <form action="sb">adios</form>
+  </div>
+</footer>

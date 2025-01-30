@@ -1,5 +1,6 @@
 ---
 // Supports weights 100-900
+import Footer from "@/components/footer.astro";
 import Header from "@/components/Header.astro";
 import "@fontsource-variable/onest";
 interface Props {
@@ -27,9 +28,9 @@ const { title, description } = Astro.props;
     </div>
     <div class="max-w-[800px] mx-auto my-0">
       <Header />
-
       <slot />
     </div>
+    <Footer />
   </body>
 
   <style is:global>
@@ -64,6 +65,8 @@ const { title, description } = Astro.props;
     body {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
       height: 100vh;
       background-color: #040508;
     }
