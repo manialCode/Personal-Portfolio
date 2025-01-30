@@ -1,22 +1,77 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+// Supports weights 100-900
+import Header from "@/components/Header.astro";
+import "@fontsource-variable/onest";
+interface Props {
+  title: String;
+  description: string | URL | null | undefined;
+}
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div
+      class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(200,200,200,0.3),rgba(255,255,255,0))]"
+    >
+    </div>
+    <div class="max-w-[800px] mx-auto my-0">
+      <Header />
+
+      <slot />
+    </div>
+  </body>
+
+  <style is:global>
+    html,
+    body {
+      margin: 0;
+      font-family:
+        "Onest Variable",
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+    }
+
+    /* Set core body defaults */
+    body {
+      text-rendering: optimizeSpeed;
+      line-height: 1.5;
+    }
+
+    /* Make images easier to work with */
+
+    :root {
+      color-scheme: light dark;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background-color: #040508;
+    }
+
+    @media (prefers-reduced-motion) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</html>

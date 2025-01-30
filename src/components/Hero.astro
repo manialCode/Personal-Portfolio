@@ -1,0 +1,52 @@
+---
+import LinkedIn from "@/assets/LinkedIn.astro";
+import Badge from "./Badge.astro";
+import SocialPill from "./SocialPill.astro";
+import GitHub from "@/assets/GitHub.astro";
+import Mail from "@/assets/Mail.astro";
+---
+
+<picture
+  class="rounded-full max-h-44 max-w-44 overflow-hidden flex md:my-auto mx-auto mb-5"
+>
+  <img
+    src="https://avatars.githubusercontent.com/u/100158273?v=4"
+    alt="Juan Monti Foto"
+  />
+</picture>
+<div class="px-10 my-auto">
+  <div class="flex justify-between">
+    <a
+      href="https://www.linkedin.com/in/juan-mart%C3%ADn-monti-536a98203/"
+      target="_blank"
+      rel="noopener"
+      class="flex justify-start mb-5 items-center"
+    >
+      <Badge>Disponible <span class="font-bold">para trabajar</span></Badge>
+    </a>
+  </div>
+  <h1 class="text-5xl flex justify-start flex-row gap-x-4 font-bold pb-4">
+    Hola!, soy Juan Monti
+  </h1>
+  <h2 class="text-xl opacity-80">
+    +3 años como <span class="text-cyan-400 font-bold"
+      >Desarrollador Web Full-Stack</span
+    >. Especializado en Diseños Modernos y Accesibles.
+  </h2>
+  <ul class="flex gap-x-6 mt-5">
+    <SocialPill
+      href={"https://www.linkedin.com/in/juan-mart%C3%ADn-monti-536a98203/"}
+    >
+      LinkedIn
+      <LinkedIn class="w-4 h-4" />
+    </SocialPill>
+    <SocialPill href="https://github.com/manialCode">
+      GitHub
+      <GitHub class="w-4 h-4" />
+    </SocialPill>
+    <SocialPill href="https://github.com/manialCode">
+      Gmail
+      <Mail class="w-4 h-4" />
+    </SocialPill>
+  </ul>
+</div>

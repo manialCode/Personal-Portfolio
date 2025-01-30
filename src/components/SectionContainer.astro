@@ -1,0 +1,14 @@
+---
+import { any, undefined } from "astro:schema";
+
+interface Props {
+  className?: String;
+  id?: string;
+}
+
+const { className, id } = Astro.props;
+---
+
+<section id={id} class={`flex  flex-col ${className}`}>
+  <slot />
+</section>
