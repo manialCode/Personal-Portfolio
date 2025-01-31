@@ -8,6 +8,8 @@
     "paths": {
       "@/*": ["src/*"],
       "@/components": ["src/components/*"],
+      "@/main": ["src/components/pageContent/*"],
+      "@/common": ["src/components/common/*"],
       "@/public": ["./public/*"]
     }
   }

@@ -1,7 +1,7 @@
 ---
 // Supports weights 100-900
-import Footer from "@/components/footer.astro";
-import Header from "@/components/Header.astro";
+import Footer from "@/components/PageContent/Footer.astro";
+import Header from "@/components/PageContent/Header.astro";
 import "@fontsource-variable/onest";
 interface Props {
   title: String;
@@ -23,7 +23,7 @@ const { title, description } = Astro.props;
   </head>
   <body>
     <div
-      class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(200,200,200,0.3),rgba(255,255,255,0))]"
+      class="absolute top-0 z-[-2] h-full w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(200,200,200,0.3),rgba(255,255,255,0))]"
     >
     </div>
     <div class="max-w-[800px] mx-auto my-0">
