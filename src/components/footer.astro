@@ -5,24 +5,30 @@ import { PersonalSocialLinks, type SocialInfo } from "@/lib/data";
 
 <footer class="w-full bg-gradient-to-b from-black/60 to-transparent py-20">
   <div class="max-w-[800px] grid grid-cols-2 gap-3 mx-auto">
-    <nav aria-role="social-nav">
-      <h3 class="semi-bold text-cyan-400/90">Redes Sociales</h3>
-      <ul>
+    <nav aria-role="social-nav" class="border px-8 py-4 rounded-2xl">
+      <h3 class="font-bold text-xl text-cyan-400/90">Redes Sociales</h3>
+      <ul class="mt-2 grid gap-y-4">
         {
           PersonalSocialLinks.map((item: SocialInfo) => {
             return (
-              <a
-                href={item.SocialLink}
-                class="text-white flex gap-2 items-center hover:text-cyan-400 transition"
-              >
-                <SocialProp icon={item.SocialNetwork} />
-                <span>{item.UserName}</span>
-              </a>
+              <li class="">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={item.SocialLink}
+                  class="text-white flex gap-x-2 items-center hover:text-red-400 transition"
+                >
+                  <SocialProp icon={item.SocialNetwork} />
+                  <span>{item.UserName}</span>
+                </a>
+              </li>
             );
           })
         }
       </ul>
     </nav>
-    <form action="sb">adios</form>
+    <section id="get-in-touch" class="border rounded-2xl px-8 py-4">
+      <form action="sb" class="">adios</form>
+    </section>
   </div>
 </footer>
