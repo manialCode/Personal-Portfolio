@@ -2,31 +2,36 @@
 import SubmitButton from "../form/SubmitButton.astro";
 ---
 
-<h3 class="font-bold text-xl text-cyan-400/90">Comunícate conmigo</h3>
-<form action="contact-with-me" id="contact" class="grid">
-  <label class="mt-6 mb-1" for="name">Nombre</label>
+<h3 class="font-bold text-xl mb-3 text-cyan-400/90">Comunícate conmigo</h3>
+<form action="contact-with-me" id="contact" class="grid font-light">
+  <label class="mb-1 font-semibold" for="email">Email</label>
+  <input
+    type="email"
+    required
+    id="email"
+    class="rounded-xl px-4 py-2 border-cyan-500/30 shadow-md border-solid border focus:shadow-cyan-600"
+    placeholder="Ingresa tu email"
+    autocomplete="off"
+  />
+  <label class="mt-6 mb-1 font-semibold" for="name">Asunto</label>
   <input
     type="text"
     id="name"
-    class="rounded-xl px-4 py-2 border-cyan-500 shadow-md border-solid border focus:shadow-cyan-400"
+    required
+    class="rounded-xl px-4 py-2 border-cyan-500/30 shadow-md border-solid border focus:shadow-cyan-600"
     placeholder="Ingresa tu nombre"
+    autocomplete="off"
   />
 
-  <label class="mt-6 mb-1" for="email">Email</label>
-  <input
-    type="email"
-    id="email"
-    class="rounded-xl px-4 py-2 border-cyan-500 shadow-md border-solid border focus:shadow-cyan-400"
-    placeholder="Ingresa tu email"
-  />
-  <label class="mt-6 mb-1" for="msg">Mensaje</label>
+  <label class="mt-6 mb-1 font-semibold" for="msg">Mensaje</label>
   <textarea
+    required
     autocomplete="off"
     form="get-in-touch-form"
     placeholder="Ingresa tu mensaje"
-    rows="9"
-    cols="9"
-    class="border-cyan-500 shadow-md border-solid border resize-none p-3 focus:shadow-cyan-400 rounded-xl"
+    rows="4"
+    cols="10"
+    class="border-cyan-500/30 shadow-md border-solid border resize-none p-3 focus:shadow-cyan-600 rounded-xl"
   ></textarea>
   <SubmitButton />
 </form>
