@@ -4,17 +4,16 @@ import { PersonalSocialLinks, type SocialInfo } from "@/lib/data";
 import Contact from "./Contact.astro";
 ---
 
-<footer
-  class="w-full bg-gradient-to-b from-black/30 to-transparent pt-10 my-20"
->
+<footer class="w-full bg-gradient-to-t from-black to-transparent pt-10 my-20">
   <div
-    class="max-w-[800px] md:grid md:grid-cols-3 flex flex-col-reverse gap-3 md:mx-auto mx-10"
+    id="layout"
+    class="max-w-[800px] flex flex-col-reverse md:items-start items-center md:flex-row md:mx-auto mx-10"
   >
     <nav
       aria-label="secondary-nav"
-      class="px-8 py-4 mt-3 rounded-2xl flex md:flex-col justify-around"
+      class="px-8 py-4 rounded-2xl flex md:flex-col justify-around mt-5 md:mt-0 w-full"
     >
-      <ul aria-label="social-links" class="mt-2 grid gap-y-4">
+      <ul aria-label="social-links" class="md:mt-0 mt-2 grid gap-y-4">
         <h3 class="font-bold text-xl text-cyan-400/90">Redes Sociales</h3>
         {
           PersonalSocialLinks.map((item: SocialInfo) => {
@@ -24,6 +23,7 @@ import Contact from "./Contact.astro";
                   target="_blank"
                   rel="noopener noreferrer"
                   href={item.SocialLink}
+                  aria-label={`Link to Monti Juan ${item.SocialNetwork}`}
                   class="text-white flex gap-x-2 items-center hover:text-red-400 transition"
                 >
                   <SocialProp icon={item.SocialNetwork} />
@@ -45,7 +45,10 @@ import Contact from "./Contact.astro";
         <a href="#contact">Contacto</a>
       </ul>
     </nav>
-    <section id="get-in-touch" class="rounded-2xl col-span-2 px-8 py-4 w-full">
+    <section
+      id="get-in-touch"
+      class="[grid-area:form] text-center md:text-left rounded-2xl px-8 py-4 md:w-full w-[80%]"
+    >
       <Contact />
     </section>
   </div>
