@@ -1,4 +1,4 @@
-interface SocialInfo {
+export interface SocialInfo {
   UserName: string;
   SocialLink: string | URL;
   SocialNetwork: string;

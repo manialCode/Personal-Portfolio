@@ -10,37 +10,37 @@ import Zustand from "@/assets/Icons/StackIcons/Zustand.astro";
 const TAGS = {
   TAILWIND: {
     name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
+    class: "border-[#003159] text-white",
     icon: Tailwind,
   },
   ASTRO: {
     name: "Astro",
-    class: "bg-[#FF5A1F] text-white",
+    class: "border-[#FF5A1F] text-white",
     icon: AstroIcon,
   },
   REACT: {
     name: "React",
-    class: "bg-[#61DAFB] text-black",
+    class: "border-[#61DAFB] text-white",
     icon: React,
   },
   ZUSTAND: {
     name: "Zustand",
-    class: "bg-[#E5E5E5] text-black",
+    class: "border-[#E5E5E5] text-white",
     icon: Zustand,
   },
   SVELTE: {
     name: "Svelte",
-    class: "bg-[#FF3E00] text-white",
+    class: "border-[#FF3E00] text-white",
     icon: Svelte,
   },
   TYPESCRIPT: {
     name: "TypeScript",
-    class: "bg-[#3178C6] text-white",
+    class: "border-[#3178C6] text-white",
     icon: TypeScript,
   },
   OPENAI: {
     name: "OpenAI",
-    class: "bg-[#412991] text-white",
+    class: "border-[#412991] text-white",
     icon: OpenIA,
   },
 };
@@ -83,19 +83,23 @@ const PROJECTS = [
 
 {
   PROJECTS.map(({ title, description, tags, github, link, image }) => (
-    <article class="p-10 ">
+    <article class="px-16 py-10 ">
       <h3 class="text-2xl font-semibold text-cyan-300 mb-3">{title}</h3>
       <p class="text-lg mb-2 text-pretty">{description}</p>
-      <ul>
+      <ul class="flex gap-x-4 flex-row justify-center md:justify-normal">
         {tags.map((tag) => (
           <li>
-            {" "}
-            <tag.icon class="size-8" />{" "}
+            <span
+              class={`flex gap-x-2 rounded-full text-xs border ${tag.class} px-4 py-2 items-center justify-center`}
+            >
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
           </li>
         ))}
       </ul>
       <img
-        class="aspect-video object-cover  rounded-lg shadow-2xl shadow-white/10"
+        class="aspect-video  object-cover mt-4 rounded-lg shadow-2xl shadow-white/10"
         src={image}
         alt={`Captura de pantalla de proyecto ${title}`}
       />
