@@ -1,0 +1,104 @@
+---
+import Tailwind from "@/assets/Icons/StackIcons/Tailwind.astro";
+import React from "@/assets/Icons/StackIcons/React.astro";
+import AstroIcon from "@/assets/Icons/StackIcons/AstroIcon.astro";
+import OpenIA from "@/assets/Icons/StackIcons/OpenIA.astro";
+import Svelte from "@/assets/Icons/StackIcons/Svelte.astro";
+import TypeScript from "@/assets/Icons/StackIcons/TypeScript.astro";
+import Zustand from "@/assets/Icons/StackIcons/Zustand.astro";
+
+const TAGS = {
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-[#FF5A1F] text-white",
+    icon: AstroIcon,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-[#61DAFB] text-black",
+    icon: React,
+  },
+  ZUSTAND: {
+    name: "Zustand",
+    class: "bg-[#E5E5E5] text-black",
+    icon: Zustand,
+  },
+  SVELTE: {
+    name: "Svelte",
+    class: "bg-[#FF3E00] text-white",
+    icon: Svelte,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-[#3178C6] text-white",
+    icon: TypeScript,
+  },
+  OPENAI: {
+    name: "OpenAI",
+    class: "bg-[#412991] text-white",
+    icon: OpenIA,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Spotify clon",
+    description:
+      "Un clon funcional de la interfaz de Spotify construido con Astro v5, integrando React, TypeScript, y Zustand para el manejo del estado global. Este proyecto emula funcionalidades básicas de la plataforma de streaming musical, con un diseño interactivo.",
+    link: "https://spotify-clon-astro-5.vercel.app/",
+    github: "https://github.com/manialCode/Spotify-clon-Astro-5",
+    image:
+      "https://github.com/manialCode/Spotify-clon-Astro-5/blob/main/screenshots/homepage.png?raw=true",
+    tags: [
+      TAGS.ASTRO,
+      TAGS.REACT,
+      TAGS.TAILWIND,
+      TAGS.ZUSTAND,
+      TAGS.TYPESCRIPT,
+    ],
+  },
+  {
+    title: "PDF_TALKER",
+    description:
+      "Este proyecto es una aplicación web construida con Astro que permite a los usuarios subir archivos PDF y procesarlos utilizando Cloudinary. La aplicación también utiliza Svelte para la interfaz de usuario y Tailwind CSS para el diseño.",
+    link: "",
+    github: "https://github.com/manialCode/PDF_TALKER",
+    image:
+      "https://github.com/manialCode/PDF_TALKER/blob/main/screenshots/%7BD5234055-FC20-465D-A117-F83C39828033%7D.png?raw=true",
+    tags: [
+      TAGS.ASTRO,
+      TAGS.SVELTE,
+      TAGS.TAILWIND,
+      TAGS.TYPESCRIPT,
+      TAGS.OPENAI,
+    ],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, tags, github, link, image }) => (
+    <article class="p-10 ">
+      <h3 class="text-2xl font-semibold text-cyan-300 mb-3">{title}</h3>
+      <p class="text-lg mb-2 text-pretty">{description}</p>
+      <ul>
+        {tags.map((tag) => (
+          <li>
+            {" "}
+            <tag.icon class="size-8" />{" "}
+          </li>
+        ))}
+      </ul>
+      <img
+        class="aspect-video object-cover  rounded-lg shadow-2xl shadow-white/10"
+        src={image}
+        alt={`Captura de pantalla de proyecto ${title}`}
+      />
+    </article>
+  ))
+}
