@@ -4,6 +4,19 @@ export default {
   theme: {
     darkMode: "class",
     extend: {},
+    animation: {
+      "background-shine": "background-shine 2s linear infinite alternate",
+    },
+    keyframes: {
+      "background-shine": {
+        from: {
+          backgroundPosition: "0 0",
+        },
+        to: {
+          backgroundPosition: "-200% 0",
+        },
+      },
+    },
   },
   plugins: [],
 };
