@@ -6,6 +6,9 @@ import OpenIA from "@/assets/Icons/StackIcons/OpenIA.astro";
 import Svelte from "@/assets/Icons/StackIcons/Svelte.astro";
 import TypeScript from "@/assets/Icons/StackIcons/TypeScript.astro";
 import Zustand from "@/assets/Icons/StackIcons/Zustand.astro";
+import LinkInline from "../common/LinkInline.astro";
+import WWW from "@/assets/Icons/WWW.astro";
+import GitHub from "@/assets/Icons/SocialIcons/GitHub.astro";
 
 const TAGS = {
   TAILWIND: {
@@ -83,7 +86,7 @@ const PROJECTS = [
 
 {
   PROJECTS.map(({ title, description, tags, github, link, image }) => (
-    <article class="px-16 py-10 ">
+    <article class="px-16 py-10 group relative">
       <h3 class="text-2xl font-semibold text-cyan-300 mb-3">{title}</h3>
       <p class="text-lg mb-2 text-pretty">{description}</p>
       <ul class="flex gap-x-4 flex-row justify-center md:justify-normal">
@@ -99,10 +102,24 @@ const PROJECTS = [
         ))}
       </ul>
       <img
-        class="aspect-video mx-auto max-w-[650px] object-cover mt-4 rounded-lg shadow-2xl shadow-white/10"
+        class="aspect-video mx-auto max-w-[650px] object-cover mt-4 rounded-lg shadow-2xl shadow-white/10 "
         src={image}
         alt={`Captura de pantalla de proyecto ${title}`}
       />
+      <footer class="flex gap-4 p-4 justify-end">
+        {link ? (
+          <LinkInline href={link}>
+            <WWW class="size-6" />
+            Ir a sitio web
+          </LinkInline>
+        ) : (
+          ""
+        )}
+        <LinkInline href={github}>
+          <GitHub class="size-6" />
+          Ir a código fuente
+        </LinkInline>
+      </footer>
     </article>
   ))
 }

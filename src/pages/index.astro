@@ -2,8 +2,10 @@
 import SectionContainer from "@/components/common/SectionContainer.astro";
 import Layout from "../layouts/Layout.astro";
 import Hero from "@/components/pageContent/Hero.astro";
-import Code from "@/assets/Code.astro";
+import Code from "@/assets/Icons/Code.astro";
 import Projects from "@/components/pageContent/Projects.astro";
+import AboutMe from "@/components/pageContent/AboutMe.astro";
+import About from "@/assets/Icons/About.astro";
 ---
 
 <Layout
@@ -34,6 +36,15 @@ import Projects from "@/components/pageContent/Projects.astro";
         <h2>Proyectos</h2>
       </div>
       <Projects />
+    </SectionContainer>
+    <SectionContainer id="about">
+      <div
+        class="flex gap-x-2 items-center md:justify-normal justify-center font-bold text-3xl"
+      >
+        <About class="size-10" />
+        <h2 class="my-8">Sobre mi</h2>
+      </div>
+      <AboutMe />
     </SectionContainer>
   </main>
 </Layout>

@@ -1,0 +1,19 @@
+---
+import Instagram from "@/assets/Icons/SocialIcons/Instagram.astro";
+import X from "@/assets/Icons/SocialIcons/X.astro";
+import LinkedIn from "@/assets/Icons/SocialIcons/LinkedIn.astro";
+import GitHub from "@/assets/Icons/SocialIcons/GitHub.astro";
+
+interface Props {
+  icon: string;
+}
+
+const { icon } = Astro.props;
+---
+
+<>
+  {icon === "Instagram" && <Instagram />}
+  {icon === "X" && <X />}
+  {icon === "GitHub" && <GitHub />}
+  {icon === "LinkedIn" && <LinkedIn />}
+</>
