@@ -1,11 +1,13 @@
 <form
-  action="contact-with-me"
-  id="contact"
+  action="https://formsubmit.co/juanmartinmonti4@gmail.com"
+  method="POST"
+  id="contactForm"
   class="grid font-light px-20 pb-10 pt-4"
 >
   <div class="grid grid-cols-2 gap-4">
     <input
       type="email"
+      name="email"
       aria-label="email-input"
       required
       id="email"
@@ -15,17 +17,20 @@
     />
     <input
       type="text"
-      id="name"
+      id="subject"
+      name="subject"
       aria-label="email-input"
       required
       class="rounded-xl shadow-white/10 px-4 py-2 shadow-lg transition duration-300 focus:outline-none focus:shadow-cyan-400/30"
-      placeholder="Ingresa tu nombre"
+      placeholder="Ingresa tu asunto"
       autocomplete="off"
     />
   </div>
 
   <label class="mt-6" for="msg">Mensaje</label>
   <textarea
+    id="textarea"
+    name="message"
     required
     autocomplete="off"
     form="get-in-touch-form"
@@ -33,9 +38,38 @@
     rows="10"
     class="shadow-lg resize-none p-3 focus:outline-none transition duration-300 focus:shadow-cyan-400/30 rounded-xl shadow-white/10"
   ></textarea>
+  <input type="hidden" name="_captcha" value="false" />
   <button
     class="mt-4 font-bold inline-flex h-12 animate-background-shine items-center justify-center rounded-md border border-gray-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50"
   >
     Enviar
   </button>
 </form>
+
+<script lang="ts">
+  const form = document.getElementById("contactForm");
+  const textarea = document.querySelectorAll("textarea");
+  form?.addEventListener("submit", async function (event) {
+    event.preventDefault(); // Evita la redirección
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(new FormData(form)),
+      });
+
+      if (response.ok) {
+        // Aquí puedes mostrar un mensaje de éxito sin redirigir
+        alert("Mensaje enviado correctamente");
+        textarea.value = "";
+        form.reset();
+      } else {
+        alert("Error al enviar el mensaje");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Error al enviar el mensaje");
+    }
+  });
+</script>
