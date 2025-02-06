@@ -1,5 +1,7 @@
 # Proyecto de Portafolio con Astro
 
+[![Imagen de la pagina](./Snapshots/MainPage.png)](https://personal-portfolio-omega-five-92.vercel.app/)
+
 Este proyecto es un portafolio personal construido con Astro, Tailwind y Typescript.
 
 ## 🚀 Estructura del Proyecto
