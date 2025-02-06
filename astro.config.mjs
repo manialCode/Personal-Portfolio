@@ -9,4 +9,5 @@ import vercel from "@astrojs/vercel";
 export default defineConfig({
   integrations: [tailwind()],
   adapter: vercel(),
+  output: "server",
 });
