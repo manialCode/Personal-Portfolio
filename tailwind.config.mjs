@@ -5,7 +5,7 @@ export default {
     darkMode: "class",
     extend: {},
     animation: {
-      "background-shine": "background-shine 2s linear infinite alternate",
+      "background-shine": "background-shine 2s linear infinite both",
     },
     keyframes: {
       "background-shine": {
