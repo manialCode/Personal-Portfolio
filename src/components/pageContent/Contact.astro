@@ -1,39 +1,37 @@
-<h3 class="font-bold text-2 xl mb-3 text-cyan-400/90">Comunícate conmigo</h3>
-<form action="contact-with-me" id="contact" class="grid font-light">
-  <label class="mb-1 font-normal" for="email">Email</label>
-  <input
-    type="email"
-    required
-    id="email"
-    class="rounded-xl shadow-white/10 px-4 py-2 shadow-lg transition duration-300 focus:outline-none focus:shadow-cyan-400/30"
-    placeholder="Ingresa tu email"
-    autocomplete="off"
-  />
-  <label class="mt-6 mb-1 font-normal" for="name">Nombre</label>
-  <input
-    type="text"
-    id="name"
-    required
-    class="rounded-xl shadow-white/10 px-4 py-2 shadow-lg transition duration-300 focus:outline-none focus:shadow-cyan-400/30"
-    placeholder="Ingresa tu nombre"
-    autocomplete="off"
-  />
+<form action="contact-with-me" id="contact" class="grid font-light px-20 pb-10">
+  <div class="grid grid-cols-2 gap-4">
+    <input
+      type="email"
+      aria-label="email-input"
+      required
+      id="email"
+      class="rounded-xl shadow-white/10 px-4 py-2 shadow-lg transition duration-300 focus:outline-none border-b-2 focus:shadow-cyan-400/30"
+      placeholder="Ingresa tu email"
+      autocomplete="off"
+    />
+    <input
+      type="text"
+      id="name"
+      aria-label="email-input"
+      required
+      class="rounded-xl shadow-white/10 px-4 py-2 shadow-lg transition duration-300 focus:outline-none focus:shadow-cyan-400/30"
+      placeholder="Ingresa tu nombre"
+      autocomplete="off"
+    />
+  </div>
 
-  <label class="mt-6 mb-1 font-normal" for="msg">Mensaje</label>
+  <label class="mt-6" for="msg">Mensaje</label>
   <textarea
     required
     autocomplete="off"
     form="get-in-touch-form"
     placeholder="Ingresa tu mensaje"
-    rows="4"
-    cols="10"
+    rows="10"
     class="shadow-lg resize-none p-3 focus:outline-none transition duration-300 focus:shadow-cyan-400/30 rounded-xl shadow-white/10"
   ></textarea>
-  <div>
-    <button
-      type="submit"
-      class="bg-cyan-500 mt-4 rounded-full hover:bg-cyan-800 transition px-6 py-1"
-      >Enviar</button
-    >
-  </div>
+  <button
+    class="mt-4 font-bold inline-flex h-12 animate-background-shine items-center justify-center rounded-md border border-gray-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50"
+  >
+    Enviar
+  </button>
 </form>
