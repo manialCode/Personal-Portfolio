@@ -1,6 +1,7 @@
 <header class="py-4 w-full">
   <nav
-    class="hidden backdrop-blur-xl bg-black w-fit mx-auto py-2 px-8 rounded-full md:flex flex-row justify-center items-center opacity-70 gap-x-10"
+    id="header-nav"
+    class="fixed top-0 right-0 w-full py-4 px-8 flex flex-row justify-center items-center gap-x-10 text-xl font-bold md:font-normal"
   >
     <a href="#top">Inicio</a>
     <a href="#projects">Proyectos </a>
@@ -8,3 +9,63 @@
     <a href="#contact">Contacto</a>
   </nav>
 </header>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav a");
+
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("text-blue-500");
+            } else {
+              item.classList.remove("text-blue-500");
+            }
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    });
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    // Cleanup function
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect();
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      }
+    };
+  });
+</script>
+
+<style>
+  #header-nav {
+    animation: blur linear both;
+    animation-timeline: scroll();
+    animation-range: 0 500px;
+  }
+
+  @keyframes blur {
+    to {
+      box-shadow:
+        0px 5px 50px -5px rgba(0, 0, 0, 0.1),
+        0px 0px 0 1px rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+    }
+  }
+</style>
