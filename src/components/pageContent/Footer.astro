@@ -3,6 +3,10 @@ import SocialProp from "@/assets/Icons/SocialProp.astro";
 import { PersonalSocialLinks, type SocialInfo } from "@/lib/data";
 import Badge from "../common/Badge.astro";
 import SocialIcon from "@/assets/Icons/SocialIcons/SocialIcon.astro";
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <footer class="w-full bg-gradient-to-t from-black to-transparent">
@@ -12,7 +16,7 @@ import SocialIcon from "@/assets/Icons/SocialIcons/SocialIcon.astro";
   >
     <div class="flex items-center justify-center mb-8">
       <SocialIcon class="size-8" />
-      <h3 class="font-bold text-3xl">Redes Sociales</h3>
+      <h3 class="font-bold text-3xl">{i18n.FOOTER_LINKS}</h3>
     </div>
     <ul aria-label="social-links" class="md:mt-0 flex gap-x-4 justify-around">
       {

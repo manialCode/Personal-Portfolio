@@ -8,12 +8,13 @@ import AboutMe from "@/components/pageContent/AboutMe.astro";
 import About from "@/assets/Icons/About.astro";
 import Contact from "@/components/pageContent/Contact.astro";
 import ContactIcon from "@/assets/Icons/Contact.astro";
+
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
-<Layout
-  title="Portfolio de Monti Juan - Desarrollador y Programador Web"
-  description="Apasionado del desarrollo y la atención al detalle, siempre en busca de un desarrollo limpio, moderno y accesible"
->
+<Layout title={i18n.SEO_TITLE} description={i18n.SEO_DESCRIPTION}>
   <main class="mx-auto md:text-left text-center">
     <SectionContainer
       id="top"
@@ -35,7 +36,7 @@ import ContactIcon from "@/assets/Icons/Contact.astro";
         class="flex gap-x-2 items-center md:justify-normal justify-center font-bold text-3xl"
       >
         <Code class="size-10" />
-        <h2>Proyectos</h2>
+        <h2>{i18n.SECTION_TITLE_1}</h2>
       </div>
       <Projects />
     </SectionContainer>
@@ -44,7 +45,7 @@ import ContactIcon from "@/assets/Icons/Contact.astro";
         class="flex gap-x-2 items-center md:justify-normal justify-center font-bold text-3xl"
       >
         <About class="size-10" />
-        <h2 class="my-8">Sobre mi</h2>
+        <h2 class="my-8">{i18n.SECTION_TITLE_2}</h2>
       </div>
       <AboutMe />
     </SectionContainer>
@@ -53,7 +54,7 @@ import ContactIcon from "@/assets/Icons/Contact.astro";
         class="flex gap-x-2 items-center md:justify-normal justify-center font-bold text-2xl"
       >
         <ContactIcon class="size-10" />
-        <h2 class="my-8">Comunícate conmigo</h2>
+        <h2 class="my-8">{i18n.SECTION_TITLE_3}</h2>
       </div>
       <Contact />
     </SectionContainer>

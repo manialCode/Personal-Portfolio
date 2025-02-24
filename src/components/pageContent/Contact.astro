@@ -1,3 +1,9 @@
+---
+import { getI18N } from "@/i18n";
+const currentLocale = Astro.currentLocale;
+const i18n = getI18N({ currentLocale });
+---
+
 <form
   action="https://formsubmit.co/juanmartinmonti4@gmail.com"
   method="POST"
@@ -12,7 +18,7 @@
       required
       id="email"
       class="rounded-xl shadow-white/10 px-4 py-2 shadow-lg transition duration-300 focus:outline-none focus:shadow-cyan-400/30"
-      placeholder="Ingresa tu email"
+      placeholder={i18n.EMAIL}
       autocomplete="off"
     />
     <input
@@ -22,19 +28,19 @@
       aria-label="email-input"
       required
       class="rounded-xl shadow-white/10 px-4 py-2 shadow-lg transition duration-300 focus:outline-none focus:shadow-cyan-400/30"
-      placeholder="Ingresa tu asunto"
+      placeholder={i18n.SUBJECT}
       autocomplete="off"
     />
   </div>
 
-  <label class="mt-6" for="msg">Mensaje</label>
+  <label class="my-6 font-semibold" for="msg">{i18n.TEXTAREA}</label>
   <textarea
     id="textarea"
     name="message"
     required
     autocomplete="off"
     form="get-in-touch-form"
-    placeholder="Ingresa tu mensaje"
+    placeholder={i18n.TEXTAREA_MSG}
     rows="10"
     class="shadow-lg resize-none p-3 focus:outline-none transition duration-300 focus:shadow-cyan-400/30 rounded-xl shadow-white/10"
   ></textarea>
@@ -42,34 +48,6 @@
   <button
     class="mt-4 font-bold inline-flex h-12 animate-background-shine items-center justify-center rounded-md border border-gray-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50"
   >
-    Enviar
+    {currentLocale === "en" ? "Send" : "Enviar"}
   </button>
 </form>
-
-<script lang="ts">
-  const form = document.getElementById("contactForm");
-  const textarea = document.querySelectorAll("textarea");
-  form?.addEventListener("submit", async function (event) {
-    event.preventDefault(); // Evita la redirección
-
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(new FormData(form)),
-      });
-
-      if (response.ok) {
-        // Aquí puedes mostrar un mensaje de éxito sin redirigir
-        alert("Mensaje enviado correctamente");
-        textarea.value = "";
-        form.reset();
-      } else {
-        alert("Error al enviar el mensaje");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("Error al enviar el mensaje");
-    }
-  });
-</script>

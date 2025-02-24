@@ -9,6 +9,10 @@ import Zustand from "@/assets/Icons/StackIcons/Zustand.astro";
 import LinkInline from "../common/LinkInline.astro";
 import WWW from "@/assets/Icons/WWW.astro";
 import GitHub from "@/assets/Icons/SocialIcons/GitHub.astro";
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 
 const TAGS = {
   TAILWIND: {
@@ -51,8 +55,7 @@ const TAGS = {
 const PROJECTS = [
   {
     title: "Spotify clon",
-    description:
-      "Un clon funcional de la interfaz de Spotify construido con Astro v5, integrando React, TypeScript, y Zustand para el manejo del estado global. Este proyecto emula funcionalidades básicas de la plataforma de streaming musical, con un diseño interactivo.",
+    description: i18n.SPOTIFY_CLON_DESC,
     link: "https://spotify-clon-astro-5.vercel.app/",
     github: "https://github.com/manialCode/Spotify-clon-Astro-5",
     image:
@@ -67,8 +70,7 @@ const PROJECTS = [
   },
   {
     title: "PDF_TALKER",
-    description:
-      "Este proyecto es una aplicación web construida con Astro que permite a los usuarios subir archivos PDF y procesarlos utilizando Cloudinary. La aplicación también utiliza Svelte para la interfaz de usuario y Tailwind CSS para el diseño.",
+    description: i18n.PDF_TALKER_DESC,
     link: "",
     github: "https://github.com/manialCode/PDF_TALKER",
     image:
@@ -104,20 +106,20 @@ const PROJECTS = [
       <img
         class="aspect-video mx-auto max-w-[650px] object-cover mt-4 rounded-lg shadow-2xl shadow-white/10 "
         src={image}
-        alt={`Captura de pantalla de proyecto ${title}`}
+        alt={`${i18n.ALT_IMG_PR} ${title}`}
       />
       <footer class="flex gap-4 p-4 justify-end">
         {link ? (
           <LinkInline href={link}>
             <WWW class="size-6" />
-            Ir a sitio web
+            {i18n.GO_TO_WEB}
           </LinkInline>
         ) : (
           ""
         )}
         <LinkInline href={github}>
           <GitHub class="size-6" />
-          Ir a código fuente
+          {i18n.GO_TO_CODE}
         </LinkInline>
       </footer>
     </article>

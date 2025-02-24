@@ -4,6 +4,10 @@ import Badge from "@/components/common/Badge.astro";
 import SocialPill from "@/components/common/SocialPill.astro";
 import GitHub from "@/assets/Icons/SocialIcons/GitHub.astro";
 import Mail from "@/assets/Icons/Mail.astro";
+
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <picture
@@ -11,7 +15,7 @@ import Mail from "@/assets/Icons/Mail.astro";
 >
   <img
     src="https://avatars.githubusercontent.com/u/100158273?v=4"
-    alt="Juan Monti Foto"
+    alt={i18n.ALT_IMG_AM}
     class="size-full"
   />
 </picture>
@@ -23,15 +27,17 @@ import Mail from "@/assets/Icons/Mail.astro";
       rel="noopener"
       class="flex justify-start mb-5 items-center"
     >
-      <Badge>Disponible <span class="font-bold">para trabajar</span></Badge>
+      <Badge>{i18n.BADGE_1} <span class="font-bold">{i18n.BADGE_2}</span></Badge
+      >
     </a>
   </div>
   <section class="">
-    <h1 class="md:text-5xl text-3xl font-bold pb-4">Hola!, soy Juan Monti</h1>
+    <h1 class="md:text-5xl text-3xl font-bold pb-4">{i18n.HERO_H1}</h1>
     <h2 class="text-xl md:mx-0 mx-auto max-w-[400px] text-pretty opacity-80">
-      +3 años como <span class="text-cyan-400 font-bold"
-        >Desarrollador Web Full-Stack</span
-      >. Especializado en Diseños Modernos y Accesibles.
+      {i18n.HERO_H2_1}
+      <span class="text-cyan-400 font-bold">{i18n.HERO_H2_2}</span>{
+        i18n.HERO_H2_3
+      }
     </h2>
   </section>
   <ul class="flex md:justify-normal justify-center flex-wrap gap-6 mt-5">

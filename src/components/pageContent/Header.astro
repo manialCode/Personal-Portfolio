@@ -3,6 +3,9 @@ import About from "@/assets/Icons/About.astro";
 import Code from "@/assets/Icons/Code.astro";
 import Contact from "@/assets/Icons/Contact.astro";
 import Home from "@/assets/Icons/Home.astro";
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <header class="py-4">
@@ -11,19 +14,19 @@ import Home from "@/assets/Icons/Home.astro";
     class="fixed [&>a>svg]:size-8 top-0 right-0 w-full py-6 flex flex-row justify-center items-center gap-x-10 text-xl font-bold md:font-normal"
   >
     <a href="#top" aria-label="Inicio">
-      <span class="hidden md:inline">Inicio</span>
+      <span class="hidden md:inline">{i18n.HEADER_LINK_1}</span>
       <Home class="inline md:hidden size-6" />
     </a>
     <a href="#projects" aria-label="Proyectos">
-      <span class="hidden md:inline">Proyectos</span>
+      <span class="hidden md:inline">{i18n.HEADER_LINK_2}</span>
       <Code class="inline md:hidden size-6" />
     </a>
     <a href="#about" aria-label="Sobre mí">
-      <span class="hidden md:inline">Sobre mí</span>
+      <span class="hidden md:inline">{i18n.HEADER_LINK_3}</span>
       <About class="inline md:hidden size-6" />
     </a>
     <a href="#contact" aria-label="Contacto">
-      <span class="hidden md:inline">Contacto</span>
+      <span class="hidden md:inline">{i18n.HEADER_LINK_4}</span>
       <Contact class="inline md:hidden size-6" />
     </a>
   </nav>
