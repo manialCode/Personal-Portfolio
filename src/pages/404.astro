@@ -1,0 +1,54 @@
+---
+import Badge from "@/components/common/Badge.astro";
+import Layout from "@/layouts/Layout.astro";
+
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<Layout title="404" description={i18n["404_SEO_DESC"]}>
+  <div class="flex flex-col items-center justify-center h-screen">
+    <div class="w-full relative pb-[56%] h-0 my-5">
+      <iframe
+        src="https://giphy.com/embed/QMHoU66sBXqqLqYvGO"
+        width="100%"
+        height="100%"
+        style="position:absolute"
+        class="giphy-embed"
+        allowfullscreen></iframe>
+    </div><p>
+      <a href="https://giphy.com/gifs/this-is-fine-QMHoU66sBXqqLqYvGO"
+        >via GIPHY</a
+      >
+    </p>
+    <h1 class="text-4xl font-bold mt-5">{i18n["404_H1"]}</h1>
+    <h2 class="text-xl py-2">{i18n["404_H2"]}</h2>
+    <p class="text-neutral-300 mt-2">
+      {i18n["404_P"]}
+    </p>
+
+    <a
+      href="/"
+      class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-lg text-white font-semibold transition"
+    >
+      <Badge>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler text-xl font-semibold icons-tabler-outline icon-tabler-arrow-left-dashed"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M5 12h6m3 0h1.5m3 0h.5"></path><path d="M5 12l6 6"></path><path
+            d="M5 12l6 -6"></path></svg
+        >
+      </Badge>
+    </a>
+  </div>
+</Layout>

@@ -36,7 +36,13 @@
     "SPOTIFY_CLON_DESC":"Un clon funcional de la interfaz de Spotify construido con Astro v5, integrando React, TypeScript, y Zustand para el manejo del estado global. Este proyecto emula funcionalidades básicas de la plataforma de streaming musical, con un diseño interactivo.",
     "PDF_TALKER_DESC":"Este proyecto es una aplicación web construida con Astro que permite a los usuarios subir archivos PDF y procesarlos utilizando Cloudinary. La aplicación también utiliza Svelte para la interfaz de usuario y Tailwind CSS para el diseño.",
     "GO_TO_WEB":"Ir a sitio web",
-    "GO_TO_CODE": "Ir a código fuente"
+    "GO_TO_CODE": "Ir a código fuente",
+
+    "404_SEO_DESC":"¡Error 404! Parece que te has perdido",
+    "404_H1":"¡Error 404!",
+    "404_H2":"¡Ups! Parece que te has perdido",
+    "404_P":"La página que buscas no existe"
+
 
 
 }
