@@ -1,0 +1,42 @@
+{
+    "SEO_TITLE": "Portfolio de Monti Juan - Desarrollador y Programador Web",
+    "SEO_DESCRIPTION": "Apasionado del desarrollo y la atención al detalle, siempre en busca de un desarrollo limpio, moderno y accesible",
+
+    "SECTION_TITLE_1": "Proyectos",
+    "SECTION_TITLE_2": "Sobre mi",
+    "SECTION_TITLE_3": "Comunícate conmigo",
+    
+    "ABOUT_P_1": " ¡Hola! Un gusto conocerte, me llamo Juan Martin, pero suelen decirme Juanma para abreviar. <strong>Soy un desarrollador trainee</strong> de Argentina🩵🤍🩵 y <em class=\"italic\">estudiante de la Universidad Técnica Nacional</em>, a punto de graduarme como Programador.",
+    "ABOUT_P_2": "Además de mis estudios, <strong>me dedico a desarrollar proyectos</strong> donde me enfoco no solo en aprender buenas prácticas, sino también en crear interfaces responsivas y agregar detalles que generen una excelente experiencia al usuario.",
+    "ABOUT_P_3": "Un caluroso <strong>abrazo y agradecimiento</strong> por tomarte el tiempo de llegar hasta este punto. Espero ser lo que estás buscando y, si no, ha sido un placer conocerte.",
+
+    "ALT_IMG_AM": "Imagen de Monti Juan",
+    "ALT_IMG_PR":"Captura de pantalla de proyecto",
+
+    "EMAIL":"Ingresa tu mail",
+    "SUBJECT":"Ingresa tu asunto",
+    "TEXTAREA_MSG":"Mensaje",
+    "TEXTAREA":"Ingresa tu mensaje",
+
+    "FOOTER_LINKS":"Redes Sociales",
+
+    "HEADER_LINK_1":"Inicio",
+    "HEADER_LINK_2":"Proyectos",
+    "HEADER_LINK_3":"Sobre Mi",
+    "HEADER_LINK_4":"Contacto",
+
+    "BADGE_1":"Disponible",
+    "BADGE_2":"para trabajar",
+
+    "HERO_H1":"Hola!, soy Juan Monti",
+    "HERO_H2_1":"+3 años como",
+    "HERO_H2_2":"Desarrollador Web Full-Stack",
+    "HERO_H2_3":". Especializado en Diseños Modernos y Accesibles.",
+
+    "SPOTIFY_CLON_DESC":"Un clon funcional de la interfaz de Spotify construido con Astro v5, integrando React, TypeScript, y Zustand para el manejo del estado global. Este proyecto emula funcionalidades básicas de la plataforma de streaming musical, con un diseño interactivo.",
+    "PDF_TALKER_DESC":"Este proyecto es una aplicación web construida con Astro que permite a los usuarios subir archivos PDF y procesarlos utilizando Cloudinary. La aplicación también utiliza Svelte para la interfaz de usuario y Tailwind CSS para el diseño.",
+    "GO_TO_WEB":"Ir a sitio web",
+    "GO_TO_CODE": "Ir a código fuente"
+
+
+}

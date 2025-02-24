@@ -1,0 +1,40 @@
+{
+    "SEO_TITLE": "Juan Monti's Portfolio - Web Developer and Programmer",
+    "SEO_DESCRIPTION": "Passionate about development and attention to detail, always seeking clean, modern, and accessible development",
+    
+    "SECTION_TITLE_1": "Projects",
+    "SECTION_TITLE_2": "About Me",
+    "SECTION_TITLE_3": "Get in Touch",
+
+    "ABOUT_P_1": "Hello! Nice to meet you, my name is Juan Martin, but people usually call me Juanma for short. <strong>I am a trainee developer</strong> from Argentina 🩵🤍🩵 and <em class=\"italic\">a student at the National Technical University</em>, about to graduate as a Programmer.",
+    "ABOUT_P_2": "In addition to my studies, <strong>I dedicate myself to developing projects</strong> where I focus not only on learning best practices but also on creating responsive interfaces and adding details that provide an excellent user experience.",
+    "ABOUT_P_3": "A warm <strong>hug and thanks</strong> for taking the time to get to this point. I hope to be what you are looking for, and if not, it has been a pleasure meeting you.",
+
+    "ALT_IMG_AM": "Image of Juan Monti",
+    "ALT_IMG_PR":"Screenshot of project",
+
+    "EMAIL": "Enter your email",
+    "SUBJECT": "Enter your subject",
+    "TEXTAREA_MSG": "Message",
+    "TEXTAREA": "Enter your message",
+
+    "FOOTER_LINKS": "Social Media",
+
+    "HEADER_LINK_1": "Home",
+    "HEADER_LINK_2": "Projects",
+    "HEADER_LINK_3": "About Me",
+    "HEADER_LINK_4": "Contact",
+
+    "BADGE_1": "Available",
+    "BADGE_2": "for work",
+
+    "HERO_H1": "Hello! I'm Juan Monti",
+    "HERO_H2_1": "+3 years as a",
+    "HERO_H2_2": "Full-Stack Web Developer",
+    "HERO_H2_3": ". Specialized in Modern and Accessible Designs.",
+
+    "SPOTIFY_CLON_DESC": "A functional clone of the Spotify interface built with Astro v5, integrating React, TypeScript, and Zustand for global state management. This project emulates basic functionalities of the music streaming platform, with an interactive design.",
+    "PDF_TALKER_DESC": "This project is a web application built with Astro that allows users to upload PDF files and process them using Cloudinary. The application also uses Svelte for the user interface and Tailwind CSS for styling.",
+    "GO_TO_WEB": "Go to website",
+    "GO_TO_CODE": "Go to source code"
+}
